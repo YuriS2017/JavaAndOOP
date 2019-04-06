@@ -1,20 +1,21 @@
 package info.sjd.entity;
 
-public class Rectangle extends Square {
-	
-	private double base;
+import info.sjd.shape_interface.Shape;
 
-	public double getBase() {
-		return base;
-	}
+public class Rectangle extends Square implements Shape {
 
-	public void setBase(double base) {
-		this.base = base;
-	}
-	
+	private double height;
+
 	@Override
 	public double getArea() {
-		return getSide() * base;
+		return (getSide() * height) / 2.0;
 	}
 
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
 }

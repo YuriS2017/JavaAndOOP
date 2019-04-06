@@ -25,5 +25,4 @@ class SquareTest {
 		
 		assertEquals(10000.0, result, 0.1);
 	}
-
 }

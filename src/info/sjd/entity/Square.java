@@ -1,10 +1,16 @@
 package info.sjd.entity;
 
 import info.sjd.abstraction.AbstractShape;
+import info.sjd.shape_interface.Shape;
 
-public class Square extends AbstractShape {
-	
+public class Square extends AbstractShape implements Shape {
+
 	private double side;
+
+	@Override
+	public double getArea() {
+		return side * side;
+	}
 
 	public double getSide() {
 		return side;
@@ -13,11 +19,4 @@ public class Square extends AbstractShape {
 	public void setSide(double side) {
 		this.side = side;
 	}
-
-	@Override
-	public double getArea() {
-		return side * side;
-	}
-	
-
 }
