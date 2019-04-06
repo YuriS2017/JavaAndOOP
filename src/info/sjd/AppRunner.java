@@ -19,70 +19,51 @@ public class AppRunner {
 		square.setSide(5);
 
 		Rectangle rectangle = new Rectangle();
-		rectangle.setBase(5);
-		rectangle.setHeight(6);
+		rectangle.setBase(50);
+		rectangle.setHeight(60);
 
 		Circle circle = new Circle();
 		circle.setRadius(10);
 
 		logger.info("\n Square area " + square.getArea() + "\n Rectangle area " + rectangle.getArea()
 				+ "\n Circle area " + circle.getArea());
-		
-        List<Shape> shapes = new ArrayList<Shape>();
-		
+
+		List<Shape> shapes = new ArrayList<Shape>();
+
 		Shape shape1 = new Square();
-		shape1 = square;
-		shapes.add(shape1);
+		shapes.add(square);
 		Shape shape2 = new Rectangle();
-		shape2 = rectangle;
-		shapes.add(shape2);
+		shapes.add(rectangle);
 		Shape shape3 = new Circle();
-		shape3 = circle;
-		shapes.add(shape3);
-		
-		
-		logger.info("maxArea shape " + getMaxArea(shapes) + " and type shape " + getMaxArea(shapes).getClass());
-		logger.info("minArea shape " + getMinArea(shapes) + " and type shape " + getMinArea(shapes).getClass());
+		shapes.add(circle);
 
+		logger.info("maxArea shape " + getMaxArea(shapes) + " and type shape " + getMaxArea(shapes).getClass().getSimpleName());
+		logger.info("minArea shape " + getMinArea(shapes) + " and type shape " + getMinArea(shapes).getClass().getSimpleName());
 
 	}
-	
+
 	public static Shape getMaxArea(List<Shape> shapes) {
-		double maxArea = shapes.get(0).getArea();
-		Shape max = null;
-		
-		for(Shape shape : shapes) {
-			if(shape != null) {
-				double result = shape.getArea();
-				if(result > maxArea) {
-					maxArea = result;
-					max = shape;
+		Shape maxShape = shapes.get(0);
+
+		for (Shape shape : shapes) {
+			if (shape != null && maxShape.getArea() < shape.getArea()) {
+					maxShape = shape;
 				}
-				
 			}
-		}
-		
-		return max;
-		
+		return maxShape;
+
 	}
-	
+
 	public static Shape getMinArea(List<Shape> shapes) {
-		double minArea = shapes.get(0).getArea();
-		Shape min = null;
-		
-		for(Shape shape : shapes) {
-			if(shape != null) {
-				double result = shape.getArea();
-				if(result < minArea) {
-					minArea = result;
-					min = shape;
-				}
-				
+		Shape minShape = shapes.get(0);
+
+		for (Shape shape : shapes) {
+			if (shape != null && minShape.getArea() > shape.getArea()) {
+				minShape = shape;
 			}
 		}
-		
-		return min;
-		
+		return minShape;
+
 	}
 
 }
