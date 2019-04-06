@@ -1,14 +1,23 @@
 package info.sjd.entity;
 
-import info.sjd.shape_interface.Shape;
+import info.sjd.abstraction.AbstractShape;
 
-public class Rectangle extends Square implements Shape {
+public class Rectangle extends AbstractShape {
 
+	private double base;
 	private double height;
 
 	@Override
 	public double getArea() {
-		return (getSide() * height) / 2.0;
+		return (base * height) / 2.0;
+	}
+
+	public double getBase() {
+		return base;
+	}
+
+	public void setBase(double base) {
+		this.base = base;
 	}
 
 	public double getHeight() {
@@ -18,4 +27,6 @@ public class Rectangle extends Square implements Shape {
 	public void setHeight(double height) {
 		this.height = height;
 	}
+
+	
 }

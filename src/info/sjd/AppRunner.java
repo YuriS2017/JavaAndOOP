@@ -13,16 +13,17 @@ public class AppRunner {
 
 		Square square = new Square();
 		square.setSide(5);
-		
+
 		Rectangle rectangle = new Rectangle();
-		rectangle.setSide(5);
+		rectangle.setBase(5);
 		rectangle.setHeight(6);
-		
+
 		Circle circle = new Circle();
 		circle.setRadius(10);
 
 		logger.info("\n Square area " + square.getArea() + "\n Rectangle area " + rectangle.getArea()
 				+ "\n Circle area " + circle.getArea());
+
 	}
 
 }

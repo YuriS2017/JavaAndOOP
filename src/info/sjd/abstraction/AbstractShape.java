@@ -1,6 +1,8 @@
 package info.sjd.abstraction;
 
-public abstract class AbstractShape {
+import info.sjd.shape_interface.Shape;
+
+public abstract class AbstractShape implements Shape {
 	
 	//public abstract double getArea();
 

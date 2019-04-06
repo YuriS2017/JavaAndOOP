@@ -9,7 +9,7 @@ class RectangleTest {
 	@Test
 	void testGetArea15() {
 		Rectangle rectangle = new Rectangle();
-		rectangle.setSide(5);
+		rectangle.setBase(5);
 		rectangle.setHeight(6);
 		
 		double result = rectangle.getArea();
