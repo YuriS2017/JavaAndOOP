@@ -28,5 +28,10 @@ public class Rectangle extends AbstractShape {
 		this.height = height;
 	}
 
+	@Override
+	public String toString() {
+		return "Rectangle [getArea()=" + getArea() + "]";
+	}
+
 	
 }

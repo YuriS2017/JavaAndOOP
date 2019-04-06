@@ -19,4 +19,10 @@ public class Square extends AbstractShape {
 	public void setSide(double side) {
 		this.side = side;
 	}
+
+	@Override
+	public String toString() {
+		return "Square [getArea()=" + getArea() + "]";
+	}
+	
 }
